@@ -11,17 +11,17 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-  @IBOutlet weak var window: NSWindow!
-
+  var windowController: BehindWindowController = BehindWindowController(windowNibName: "BehindWindowController")
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    // Insert code here to initialize your application
+    let ud = NSUserDefaults.standardUserDefaults()
+    ud.setObject(true, forKey: "WebKitDeveloperExtras")
+    ud.synchronize()
+    self.windowController.showWindow(nil)
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {
     // Insert code here to tear down your application
   }
-
-
 }
 
