@@ -29,8 +29,6 @@ class PreviewWindowController: NSWindowController {
   func loadRequest(request: NSURLRequest) {
     self.request = request;
 
-    let frame = self.webView?.mainFrame
-    frame?.stopLoading()
-    frame?.loadRequest(request)
+    self.webView?.mainFrame.loadRequest(request)
   }
 }

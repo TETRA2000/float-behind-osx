@@ -11,8 +11,8 @@ import WebKit
 
 class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
 
-  let appUrl: NSURL = NSURL(string: "http://localhost:9000/")!
-  let previewController: PreviewWindowController = PreviewWindowController(windowNibName: "PreviewWindowController")
+  let appUrl: NSURL = NSURL(string: "http://floatbehindfrontend.s3-website-ap-northeast-1.amazonaws.com/")!
+  var previewController: PreviewWindowController!
 
   @IBOutlet var webView: WebView!;
 
@@ -47,8 +47,9 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
   func requestPreviewCard(urlString: String) {
     print(urlString)
     if let url = NSURL(string: urlString) {
-      self.previewController.loadRequest(NSURLRequest(URL: url))
+      self.previewController = PreviewWindowController(windowNibName: "PreviewWindowController")
       self.previewController.showWindow(nil)
+      self.previewController.loadRequest(NSURLRequest(URL: url))
     }
   }
 
