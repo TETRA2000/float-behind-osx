@@ -19,6 +19,8 @@ class PreviewWindowController: NSWindowController {
   override func windowDidLoad() {
     super.windowDidLoad()
 
+    self.window?.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DockWindowLevelKey)) + 1
+
     if let request = self.request {
       self.loadRequest(request)
     }
