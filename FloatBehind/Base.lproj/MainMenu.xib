@@ -12,7 +12,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FloatBehind" customModuleProvider="target"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FloatBehind" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="AY6-By-Ky8" id="7Li-NY-Z1b"/>
+            </connections>
+        </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -662,6 +666,36 @@
                     </menu>
                 </menuItem>
             </items>
+        </menu>
+        <menu id="AY6-By-Ky8">
+            <items>
+                <menuItem title="Order" id="NII-OV-A74">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Order" id="ua9-q8-gIQ">
+                        <items>
+                            <menuItem title="Over Icons" id="Crd-95-xN7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="clickOverIcons:" target="Voe-Tx-rLC" id="VG2-gI-0E8"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Behind Icons" id="pRB-FJ-Jh7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="clickBehindIcons:" target="Voe-Tx-rLC" id="YSu-2I-eaY"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Quit" id="DbX-hK-qjQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickQuitItem:" target="Voe-Tx-rLC" id="fdj-TL-E6E"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-67.5" y="301.5"/>
         </menu>
     </objects>
 </document>
