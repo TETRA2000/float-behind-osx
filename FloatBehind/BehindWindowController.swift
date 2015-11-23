@@ -68,4 +68,11 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
       sender.windowScriptObject.setValue(self, forKey: "Native")
     }
   }
+
+  func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
+    // prevent the main webview to load unexpected pages
+    if frame.provisionalDataSource.request.URL != self.appUrl {
+      frame.stopLoading()
+    }
+  }
 }
