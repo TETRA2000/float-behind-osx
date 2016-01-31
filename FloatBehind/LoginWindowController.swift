@@ -15,9 +15,6 @@ protocol LoginWindowDelegate {
 
 class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
   
-  let loginUrl: NSURL = NSURL(string: "http://localhost.floatbehind.io:3000/oauth/slack")!
-  let successUrl: NSURL = NSURL(string: "http://localhost.floatbehind.io:3000/")!
-  
   var delegate: LoginWindowDelegate?;
   
   @IBOutlet var webView: WebView!
@@ -27,13 +24,13 @@ class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
     
     self.webView.frameLoadDelegate = self;
     
-    let request = NSURLRequest(URL: self.loginUrl)
+    let request = NSURLRequest(URL: URLConstants.slackLogin)
     self.webView.mainFrame.loadRequest(request)
   }
   
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
-    if frame.provisionalDataSource.request.URL?.path == self.successUrl.path {
+    if frame.provisionalDataSource.request.URL?.path == URLConstants.app.path {
       self.delegate?.loginWindowDidSuccessLogin(self.window!)
     }
   }

@@ -11,7 +11,6 @@ import WebKit
 
 class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWindowDelegate {
 
-  let appUrl: NSURL = NSURL(string: "http://localhost.floatbehind.io:3000/")!
   var previewController: PreviewWindowController!
 
   @IBOutlet var webView: WebView!;
@@ -40,7 +39,7 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWin
     // WebView settings
     self.webView.frameLoadDelegate = self;
     self.webView.drawsBackground = false;
-    let request = NSURLRequest(URL: self.appUrl)
+    let request = NSURLRequest(URL: URLConstants.app)
     self.webView.mainFrame.loadRequest(request)
   }
 
@@ -77,7 +76,7 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWin
 
   func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
     // prevent the main webview to load unexpected pages
-    if frame.provisionalDataSource.request.URL != self.appUrl {
+    if frame.provisionalDataSource.request.URL != URLConstants.app {
       frame.stopLoading()
     }
   }
