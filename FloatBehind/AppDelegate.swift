@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   var statusItem: NSStatusItem!
   var windowController: BehindWindowController = BehindWindowController(windowNibName: "BehindWindowController")
+  let loginWindowController = LoginWindowController(windowNibName: "LoginWindowController")
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     let ud = NSUserDefaults.standardUserDefaults()
@@ -35,6 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.statusItem.highlightMode = true
     self.statusItem.image = NSImage(named: "StatusBarIconTemplate")
     self.statusItem.menu = self.statusMenu
+  }
+    
+  @IBAction func clickLoginItem(sender: NSMenuItem) {
+    self.loginWindowController.delegate = self.windowController
+    self.loginWindowController.showWindow(nil)
   }
 
   @IBAction func clickOverIcons(sender: NSMenuItem) {

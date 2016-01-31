@@ -9,9 +9,9 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
+class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWindowDelegate {
 
-  let appUrl: NSURL = NSURL(string: "http://floatbehindfrontend.s3-website-ap-northeast-1.amazonaws.com/")!
+  let appUrl: NSURL = NSURL(string: "http://localhost.floatbehind.io:3000/")!
   var previewController: PreviewWindowController!
 
   @IBOutlet var webView: WebView!;
@@ -61,7 +61,13 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
       return true
     }
   }
-
+  
+  // MARK: - LoginWindowDelegate
+  func loginWindowDidSuccessLogin(window: NSWindow) {
+    window.close()
+    self.webView.reload(nil)
+  }
+  
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
     if let _ = frame.findFrameNamed("_top") {
