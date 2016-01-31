@@ -19,7 +19,7 @@
 		0335AFD71BF7FCBB00F66F2B /* PreviewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */; };
 		03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */; };
 		03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */; };
-		03ABBCB11C5DF8A100219C6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* Constants.swift */; };
+		03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* URLConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindowController.xib; sourceTree = "<group>"; };
 		03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
-		03ABBCB01C5DF8A100219C6A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		03ABBCB01C5DF8A100219C6A /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
 				03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */,
 				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
-				03ABBCB01C5DF8A100219C6A /* Constants.swift */,
+				03ABBCB01C5DF8A100219C6A /* URLConstants.swift */,
 			);
 			path = FloatBehind;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03ABBCB11C5DF8A100219C6A /* Constants.swift in Sources */,
+				03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */,
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
 				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
