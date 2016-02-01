@@ -30,7 +30,7 @@ class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
   
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
-    if frame.provisionalDataSource.request.URL?.path == URLConstants.app.path {
+    if frame.provisionalDataSource.request.URL == URLConstants.app {
       self.delegate?.loginWindowDidSuccessLogin(self.window!)
     }
   }
