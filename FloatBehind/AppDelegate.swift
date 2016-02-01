@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   var statusItem: NSStatusItem!
   var windowController: BehindWindowController = BehindWindowController(windowNibName: "BehindWindowController")
-  let loginWindowController = LoginWindowController(windowNibName: "LoginWindowController")
+  var loginWindowController: LoginWindowController!;
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     let ud = NSUserDefaults.standardUserDefaults()
@@ -39,6 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
     
   @IBAction func clickLoginItem(sender: NSMenuItem) {
+    self.loginWindowController = LoginWindowController(windowNibName: "LoginWindowController")
     self.loginWindowController.delegate = self.windowController
     self.loginWindowController.showWindow(nil)
   }
