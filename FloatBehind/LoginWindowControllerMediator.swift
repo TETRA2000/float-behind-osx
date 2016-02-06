@@ -26,7 +26,7 @@ class WeakLoginDelegate {
 }
 
 class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
-  static var sharedInstance = LoginWindowControllerMediator()
+  static let sharedInstance = LoginWindowControllerMediator()
 
   private var delegates: [WeakLoginDelegate] = [WeakLoginDelegate]()
   private var loginWindowController: LoginWindowController?
@@ -58,7 +58,7 @@ class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
 
   func loginWindowDidSuccessLogin(window: NSWindow) {
     for delegate in delegates {
-      delegate.value?.didSuccessLogin()
+      delegate.get()?.didSuccessLogin()
     }
 
     loginWindowController?.window?.close()
@@ -67,7 +67,7 @@ class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
 
   func loginWindowDidCancelLogin() {
     for delegate in delegates {
-      delegate.value?.didSuccessLogin()
+      delegate.get()?.didSuccessLogin()
     }
 
     loginWindowController = nil
