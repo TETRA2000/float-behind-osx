@@ -20,6 +20,8 @@
 		03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */; };
 		03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */; };
 		03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* URLConstants.swift */; };
+		A903768A1C60F45200AB694B /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = A90376891C60F45200AB694B /* .editorconfig */; };
+		A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		03ABBCB01C5DF8A100219C6A /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		A90376891C60F45200AB694B /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
+		A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowControllerMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		0335AF951BF78DEC00F66F2B = {
 			isa = PBXGroup;
 			children = (
+				A90376891C60F45200AB694B /* .editorconfig */,
 				030867E21BF831CA000AE366 /* .gitignore */,
 				0335AFA01BF78DEC00F66F2B /* FloatBehind */,
 				0335AFB01BF78DED00F66F2B /* FloatBehindTests */,
@@ -110,16 +115,12 @@
 		0335AFA01BF78DEC00F66F2B /* FloatBehind */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1E4831C622B9600DA000B /* WindowControllerMediator */,
+				A9D1E4821C622B7600DA000B /* WindowController */,
 				0335AFA11BF78DEC00F66F2B /* AppDelegate.swift */,
 				0335AFA31BF78DEC00F66F2B /* Assets.xcassets */,
 				0335AFA51BF78DEC00F66F2B /* MainMenu.xib */,
 				0335AFA81BF78DEC00F66F2B /* Info.plist */,
-				0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */,
-				0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */,
-				0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */,
-				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
-				03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */,
-				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
 				03ABBCB01C5DF8A100219C6A /* URLConstants.swift */,
 			);
 			path = FloatBehind;
@@ -141,6 +142,27 @@
 				0335AFBE1BF78DED00F66F2B /* Info.plist */,
 			);
 			path = FloatBehindUITests;
+			sourceTree = "<group>";
+		};
+		A9D1E4821C622B7600DA000B /* WindowController */ = {
+			isa = PBXGroup;
+			children = (
+				0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */,
+				0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */,
+				03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */,
+				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
+				0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */,
+				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
+			);
+			name = WindowController;
+			sourceTree = "<group>";
+		};
+		A9D1E4831C622B9600DA000B /* WindowControllerMediator */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */,
+			);
+			name = WindowControllerMediator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030867E31BF831CA000AE366 /* .gitignore in Resources */,
+				A903768A1C60F45200AB694B /* .editorconfig in Resources */,
 				0335AFA41BF78DEC00F66F2B /* Assets.xcassets in Resources */,
 				0335AFD31BF79E3E00F66F2B /* BehindWindowController.xib in Resources */,
 				03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */,
@@ -278,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */,
+				A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */,
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
 				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
