@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginDelegate {
+class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMediatorDelegate {
 
   var previewController: PreviewWindowController!
 
@@ -63,8 +63,8 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginDel
     }
   }
 
-  // MARK: - LoginDelegate
-  func didSuccessLogin() {
+  // MARK: - LoginMediatorDelegate
+  func loginMediatorDidSuccessLogin() {
     self.webView.reload(nil)
   }
 

@@ -8,19 +8,19 @@
 
 import Cocoa
 
-@objc protocol LoginDelegate {
-  func didSuccessLogin();
-  optional func didCancelLogin();
+@objc protocol LoginMediatorDelegate {
+  func loginMediatorDidSuccessLogin();
+  optional func loginMediatorDidCancelLogin();
 }
 
 class WeakLoginDelegate {
-  weak var value : LoginDelegate?
+  weak var value : LoginMediatorDelegate?
 
-  init (value: LoginDelegate) {
+  init (value: LoginMediatorDelegate) {
     self.value = value
   }
 
-  func get() -> LoginDelegate? {
+  func get() -> LoginMediatorDelegate? {
     return value
   }
 }
@@ -33,12 +33,12 @@ class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
 
   private override init() {}
 
-  func addDelegate(delegate: LoginDelegate) {
+  func addDelegate(delegate: LoginMediatorDelegate) {
     assert(NSThread.isMainThread())
     delegates.append(WeakLoginDelegate(value: delegate))
   }
 
-  func removeDelegate(delegate: LoginDelegate) {
+  func removeDelegate(delegate: LoginMediatorDelegate) {
     assert(NSThread.isMainThread())
     for var i = 0; i < delegates.count; i++ {
       let del = delegates[i]
@@ -58,7 +58,7 @@ class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
 
   func loginWindowDidSuccessLogin(window: NSWindow) {
     for delegate in delegates {
-      delegate.get()?.didSuccessLogin()
+      delegate.get()?.loginMediatorDidSuccessLogin()
     }
 
     loginWindowController?.window?.close()
@@ -67,7 +67,7 @@ class LoginWindowControllerMediator: NSObject, LoginWindowDelegate {
 
   func loginWindowDidCancelLogin() {
     for delegate in delegates {
-      delegate.get()?.didSuccessLogin()
+      delegate.get()?.loginMediatorDidCancelLogin?()
     }
 
     loginWindowController = nil
