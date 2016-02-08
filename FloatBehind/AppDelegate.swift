@@ -37,6 +37,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.statusItem.menu = self.statusMenu
   }
 
+  @IBAction func clickLoginItem(sender: NSMenuItem) {
+    LoginWindowControllerMediator.sharedInstance.login()
+  }
+
   @IBAction func clickOverIcons(sender: NSMenuItem) {
     self.windowController.window?.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DesktopIconWindowLevelKey)) + 1
   }

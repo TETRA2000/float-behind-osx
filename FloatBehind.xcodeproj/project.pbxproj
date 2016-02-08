@@ -17,6 +17,11 @@
 		0335AFD31BF79E3E00F66F2B /* BehindWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */; };
 		0335AFD61BF7FCBB00F66F2B /* PreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */; };
 		0335AFD71BF7FCBB00F66F2B /* PreviewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */; };
+		03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */; };
+		03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */; };
+		03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* URLConstants.swift */; };
+		A903768A1C60F45200AB694B /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = A90376891C60F45200AB694B /* .editorconfig */; };
+		A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BehindWindowController.xib; sourceTree = "<group>"; };
 		0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewWindowController.swift; sourceTree = "<group>"; };
 		0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindowController.xib; sourceTree = "<group>"; };
+		03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
+		03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
+		03ABBCB01C5DF8A100219C6A /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		A90376891C60F45200AB694B /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
+		A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowControllerMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 		0335AF951BF78DEC00F66F2B = {
 			isa = PBXGroup;
 			children = (
+				A90376891C60F45200AB694B /* .editorconfig */,
 				030867E21BF831CA000AE366 /* .gitignore */,
 				0335AFA01BF78DEC00F66F2B /* FloatBehind */,
 				0335AFB01BF78DED00F66F2B /* FloatBehindTests */,
@@ -104,14 +115,13 @@
 		0335AFA01BF78DEC00F66F2B /* FloatBehind */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1E4831C622B9600DA000B /* WindowControllerMediator */,
+				A9D1E4821C622B7600DA000B /* WindowController */,
 				0335AFA11BF78DEC00F66F2B /* AppDelegate.swift */,
 				0335AFA31BF78DEC00F66F2B /* Assets.xcassets */,
 				0335AFA51BF78DEC00F66F2B /* MainMenu.xib */,
 				0335AFA81BF78DEC00F66F2B /* Info.plist */,
-				0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */,
-				0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */,
-				0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */,
-				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
+				03ABBCB01C5DF8A100219C6A /* URLConstants.swift */,
 			);
 			path = FloatBehind;
 			sourceTree = "<group>";
@@ -132,6 +142,27 @@
 				0335AFBE1BF78DED00F66F2B /* Info.plist */,
 			);
 			path = FloatBehindUITests;
+			sourceTree = "<group>";
+		};
+		A9D1E4821C622B7600DA000B /* WindowController */ = {
+			isa = PBXGroup;
+			children = (
+				0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */,
+				0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */,
+				03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */,
+				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
+				0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */,
+				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
+			);
+			name = WindowController;
+			sourceTree = "<group>";
+		};
+		A9D1E4831C622B9600DA000B /* WindowControllerMediator */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */,
+			);
+			name = WindowControllerMediator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				030867E31BF831CA000AE366 /* .gitignore in Resources */,
+				A903768A1C60F45200AB694B /* .editorconfig in Resources */,
 				0335AFA41BF78DEC00F66F2B /* Assets.xcassets in Resources */,
 				0335AFD31BF79E3E00F66F2B /* BehindWindowController.xib in Resources */,
+				03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */,
 				0335AFD71BF7FCBB00F66F2B /* PreviewWindowController.xib in Resources */,
 				0335AFA71BF78DEC00F66F2B /* MainMenu.xib in Resources */,
 			);
@@ -267,7 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */,
+				A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */,
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
+				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
 				0335AFD61BF7FCBB00F66F2B /* PreviewWindowController.swift in Sources */,
 			);
@@ -355,6 +391,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -474,6 +511,168 @@
 			};
 			name = Release;
 		};
+		03ABBCA81C5DF3CA00219C6A /* Debug Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"LOCAL=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG -D LOCAL";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Local";
+		};
+		03ABBCA91C5DF3CA00219C6A /* Debug Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug Local";
+		};
+		03ABBCAA1C5DF3CA00219C6A /* Debug Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatBehind.app/Contents/MacOS/FloatBehind";
+			};
+			name = "Debug Local";
+		};
+		03ABBCAB1C5DF3CA00219C6A /* Debug Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FloatBehind;
+				USES_XCTRUNNER = YES;
+			};
+			name = "Debug Local";
+		};
+		03ABBCAC1C5DF3D200219C6A /* Release Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "LOCAL=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D LOCAL";
+				SDKROOT = macosx;
+			};
+			name = "Release Local";
+		};
+		03ABBCAD1C5DF3D200219C6A /* Release Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release Local";
+		};
+		03ABBCAE1C5DF3D200219C6A /* Release Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatBehind.app/Contents/MacOS/FloatBehind";
+			};
+			name = "Release Local";
+		};
+		03ABBCAF1C5DF3D200219C6A /* Release Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FloatBehindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ktsn.FloatBehindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FloatBehind;
+				USES_XCTRUNNER = YES;
+			};
+			name = "Release Local";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,7 +680,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0335AFBF1BF78DED00F66F2B /* Debug */,
+				03ABBCA81C5DF3CA00219C6A /* Debug Local */,
 				0335AFC01BF78DED00F66F2B /* Release */,
+				03ABBCAC1C5DF3D200219C6A /* Release Local */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -490,7 +691,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0335AFC21BF78DED00F66F2B /* Debug */,
+				03ABBCA91C5DF3CA00219C6A /* Debug Local */,
 				0335AFC31BF78DED00F66F2B /* Release */,
+				03ABBCAD1C5DF3D200219C6A /* Release Local */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -499,7 +702,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0335AFC51BF78DED00F66F2B /* Debug */,
+				03ABBCAA1C5DF3CA00219C6A /* Debug Local */,
 				0335AFC61BF78DED00F66F2B /* Release */,
+				03ABBCAE1C5DF3D200219C6A /* Release Local */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -508,7 +713,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0335AFC81BF78DED00F66F2B /* Debug */,
+				03ABBCAB1C5DF3CA00219C6A /* Debug Local */,
 				0335AFC91BF78DED00F66F2B /* Release */,
+				03ABBCAF1C5DF3D200219C6A /* Release Local */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

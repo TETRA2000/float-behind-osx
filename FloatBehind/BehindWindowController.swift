@@ -9,9 +9,8 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
+class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMediatorDelegate {
 
-  let appUrl: NSURL = NSURL(string: "http://floatbehindfrontend.s3-website-ap-northeast-1.amazonaws.com/")!
   var previewController: PreviewWindowController!
 
   @IBOutlet var webView: WebView!;
@@ -40,8 +39,10 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
     // WebView settings
     self.webView.frameLoadDelegate = self;
     self.webView.drawsBackground = false;
-    let request = NSURLRequest(URL: self.appUrl)
+    let request = NSURLRequest(URL: URLConstants.app)
     self.webView.mainFrame.loadRequest(request)
+
+    LoginWindowControllerMediator.sharedInstance.addDelegate(self)
   }
 
   func requestPreviewCard(urlString: String) {
@@ -62,6 +63,11 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
     }
   }
 
+  // MARK: - LoginMediatorDelegate
+  func loginMediatorDidSuccessLogin() {
+    self.webView.reload(nil)
+  }
+
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
     if let _ = frame.findFrameNamed("_top") {
@@ -71,7 +77,7 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate {
 
   func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
     // prevent the main webview to load unexpected pages
-    if frame.provisionalDataSource.request.URL != self.appUrl {
+    if frame.provisionalDataSource.request.URL != URLConstants.app {
       frame.stopLoading()
     }
   }
