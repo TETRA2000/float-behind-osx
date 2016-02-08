@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWindowDelegate {
+class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMediatorDelegate {
 
   var previewController: PreviewWindowController!
 
@@ -41,6 +41,8 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWin
     self.webView.drawsBackground = false;
     let request = NSURLRequest(URL: URLConstants.app)
     self.webView.mainFrame.loadRequest(request)
+
+    LoginWindowControllerMediator.sharedInstance.addDelegate(self)
   }
 
   func requestPreviewCard(urlString: String) {
@@ -60,13 +62,12 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginWin
       return true
     }
   }
-  
-  // MARK: - LoginWindowDelegate
-  func loginWindowDidSuccessLogin(window: NSWindow) {
-    window.close()
+
+  // MARK: - LoginMediatorDelegate
+  func loginMediatorDidSuccessLogin() {
     self.webView.reload(nil)
   }
-  
+
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
     if let _ = frame.findFrameNamed("_top") {
