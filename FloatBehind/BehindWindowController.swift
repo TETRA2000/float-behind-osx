@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMediatorDelegate {
+class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate, LoginMediatorDelegate {
 
   var previewController: PreviewWindowController!
 
@@ -17,24 +17,21 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMed
 
   override func windowDidLoad() {
     super.windowDidLoad()
-
-    var rect: NSRect!
-    let screens: [NSScreen] = NSScreen.screens()!
-
-    for var i = 0; i < screens.count; i++ {
-      let screen: NSScreen = screens[i]
-      rect = screen.visibleFrame
+    
+    guard let window = self.window else {
+        return;
     }
+    
+    window.delegate = self
 
-    // fill the window to screen size
-    self.window?.setFrame(rect, display: true)
+    fitWindowToScreen(window)
 
     // set the window behind all other windows
-    self.window?.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DesktopIconWindowLevelKey)) + 1
+    window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DesktopIconWindowLevelKey)) + 1
 
     // should be transparent
-    self.window?.backgroundColor = NSColor.clearColor()
-    self.window?.opaque = false
+    window.backgroundColor = NSColor.clearColor()
+    window.opaque = false
 
     // WebView settings
     self.webView.frameLoadDelegate = self;
@@ -60,6 +57,22 @@ class BehindWindowController: NSWindowController, WebFrameLoadDelegate, LoginMed
       return false
     default:
       return true
+    }
+  }
+
+  private func fitWindowToScreen(window: NSWindow) {
+    guard let rect = NSScreen.mainScreen()?.visibleFrame else {
+        return;
+    }
+
+    // fill the window to screen size
+    self.window?.setFrame(rect, display: true)
+  }
+
+  // MARL: - NSWindowDelegate
+  func windowDidChangeScreen(notification: NSNotification) {
+    if let window = self.window {
+      fitWindowToScreen(window)
     }
   }
 
