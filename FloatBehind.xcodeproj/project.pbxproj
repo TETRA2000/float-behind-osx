@@ -15,8 +15,6 @@
 		0335AFBD1BF78DED00F66F2B /* FloatBehindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335AFBC1BF78DED00F66F2B /* FloatBehindUITests.swift */; };
 		0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */; };
 		0335AFD31BF79E3E00F66F2B /* BehindWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */; };
-		0335AFD61BF7FCBB00F66F2B /* PreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */; };
-		0335AFD71BF7FCBB00F66F2B /* PreviewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */; };
 		03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */; };
 		03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */; };
 		03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* URLConstants.swift */; };
@@ -56,8 +54,6 @@
 		0335AFBE1BF78DED00F66F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0335AFD01BF79E3E00F66F2B /* BehindWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehindWindowController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BehindWindowController.xib; sourceTree = "<group>"; };
-		0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewWindowController.swift; sourceTree = "<group>"; };
-		0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindowController.xib; sourceTree = "<group>"; };
 		03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		03ABBCB01C5DF8A100219C6A /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
@@ -151,8 +147,6 @@
 				0335AFD11BF79E3E00F66F2B /* BehindWindowController.xib */,
 				03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */,
 				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
-				0335AFD41BF7FCBB00F66F2B /* PreviewWindowController.swift */,
-				0335AFD51BF7FCBB00F66F2B /* PreviewWindowController.xib */,
 			);
 			name = WindowController;
 			sourceTree = "<group>";
@@ -274,7 +268,6 @@
 				0335AFA41BF78DEC00F66F2B /* Assets.xcassets in Resources */,
 				0335AFD31BF79E3E00F66F2B /* BehindWindowController.xib in Resources */,
 				03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */,
-				0335AFD71BF7FCBB00F66F2B /* PreviewWindowController.xib in Resources */,
 				0335AFA71BF78DEC00F66F2B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +298,6 @@
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
 				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
-				0335AFD61BF7FCBB00F66F2B /* PreviewWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
