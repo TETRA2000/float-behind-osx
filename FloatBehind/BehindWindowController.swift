@@ -11,8 +11,6 @@ import WebKit
 
 class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate, LoginMediatorDelegate {
 
-  var previewController: PreviewWindowController!
-
   @IBOutlet var webView: WebView!;
 
   override func windowDidLoad() {
@@ -43,11 +41,8 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
   }
 
   func requestPreviewCard(urlString: String) {
-    print(urlString)
     if let url = NSURL(string: urlString) {
-      self.previewController = PreviewWindowController(windowNibName: "PreviewWindowController")
-      self.previewController.showWindow(nil)
-      self.previewController.loadRequest(NSURLRequest(URL: url))
+      NSWorkspace.sharedWorkspace().openURL(url)
     }
   }
 
