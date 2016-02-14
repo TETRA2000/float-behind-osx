@@ -7,9 +7,9 @@
 //
 
 #if LOCAL
-  let host = "http://localhost.floatbehind.io:3000/"
+  let host = "http://localhost.floatbehind.ninja:3000/"
 #else
-  let host = "https://floatbehind.io/"
+  let host = "https://floatbehind.ninja/"
 #endif
 
 import Cocoa
