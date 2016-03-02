@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>floatbehind changelog</title>
+    <link>https://raw.githubusercontent.com/ktsn/float-behind-osx/master/FloatBehind/appcast.xml</link>
+    <description>The most recent update information of the floatbehind app.</description>
+    <language>en</language>
+    <item>
+      <title>floatbehind 1.0.0</title>
+      <description>
+        <![CDATA[
+          <ul>
+          <li>First release.</li>
+          </ul>
+        ]]>
+      </description>
+      <pubDate></pubDate>
+      <enclosure url="" sparkle:version="1.0.0" length="" type="application/octet-stream" sparkle:dsaSignature="" />
+    </item>
+  </channel>
+</rss>
