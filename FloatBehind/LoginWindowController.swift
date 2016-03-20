@@ -42,6 +42,7 @@ class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
     if frame.provisionalDataSource.request.URL == URLConstants.app {
+      frame.stopLoading()
       self.delegate?.loginWindowDidSuccessLogin(self.window!)
     }
   }

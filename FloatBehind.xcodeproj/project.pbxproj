@@ -17,9 +17,11 @@
 		03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */; };
 		03ABBCA51C5DDEA000219C6A /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */; };
 		03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABBCB01C5DF8A100219C6A /* URLConstants.swift */; };
+		03CC9AE21C96F9E400817696 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC9AE11C96F9E400817696 /* StatusMenu.swift */; };
+		03D4C56A1C978E4E00294A24 /* AppCookieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4C5691C978E4E00294A24 /* AppCookieService.swift */; };
 		03F1E1F51C82C0EA00D3C1A2 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 03F1E1F41C82C0EA00D3C1A2 /* dsa_pub.pem */; };
 		57EC80458646013A8F5F0CDF /* Pods_FloatBehind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910521BB6F7DC524B0CE3485 /* Pods_FloatBehind.framework */; };
-		A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */; };
+		A9D1E4851C622C1000DA000B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1E4841C622C1000DA000B /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		03ABBCA21C5DDD8E00219C6A /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		03ABBCB01C5DF8A100219C6A /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		03CC9AE11C96F9E400817696 /* StatusMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
+		03D4C5691C978E4E00294A24 /* AppCookieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCookieService.swift; sourceTree = "<group>"; };
 		03F1E1F41C82C0EA00D3C1A2 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		03F1E1F61C82C11100D3C1A2 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		05D47997530093A27905B3CF /* Pods-FloatBehind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatBehind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatBehind/Pods-FloatBehind.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		70A954B947452BF72030EF7B /* Pods-FloatBehind.release local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatBehind.release local.xcconfig"; path = "Pods/Target Support Files/Pods-FloatBehind/Pods-FloatBehind.release local.xcconfig"; sourceTree = "<group>"; };
 		910521BB6F7DC524B0CE3485 /* Pods_FloatBehind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatBehind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90376891C60F45200AB694B /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
-		A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowControllerMediator.swift; sourceTree = "<group>"; };
+		A9D1E4841C622C1000DA000B /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		B13F278F9E5D8DE02F2B9516 /* Pods-FloatBehind.debug local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatBehind.debug local.xcconfig"; path = "Pods/Target Support Files/Pods-FloatBehind/Pods-FloatBehind.debug local.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +125,8 @@
 		0335AFA01BF78DEC00F66F2B /* FloatBehind */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1E4831C622B9600DA000B /* WindowControllerMediator */,
+				03D4C5681C978E3900294A24 /* Service */,
+				03CC9AE01C96F9C400817696 /* Menu */,
 				A9D1E4821C622B7600DA000B /* WindowController */,
 				0335AFA11BF78DEC00F66F2B /* AppDelegate.swift */,
 				03ABBCB01C5DF8A100219C6A /* URLConstants.swift */,
@@ -152,6 +157,23 @@
 			path = FloatBehindUITests;
 			sourceTree = "<group>";
 		};
+		03CC9AE01C96F9C400817696 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				03CC9AE11C96F9E400817696 /* StatusMenu.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		03D4C5681C978E3900294A24 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				03D4C5691C978E4E00294A24 /* AppCookieService.swift */,
+				A9D1E4841C622C1000DA000B /* LoginService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		6864BF0FC53E2DC7B95A8B58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,14 +191,6 @@
 				03ABBCA41C5DDEA000219C6A /* LoginWindowController.xib */,
 			);
 			name = WindowController;
-			sourceTree = "<group>";
-		};
-		A9D1E4831C622B9600DA000B /* WindowControllerMediator */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1E4841C622C1000DA000B /* LoginWindowControllerMediator.swift */,
-			);
-			name = WindowControllerMediator;
 			sourceTree = "<group>";
 		};
 		EDDBABB333B07E1210393513 /* Pods */ = {
@@ -390,9 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				03ABBCB11C5DF8A100219C6A /* URLConstants.swift in Sources */,
-				A9D1E4851C622C1000DA000B /* LoginWindowControllerMediator.swift in Sources */,
+				A9D1E4851C622C1000DA000B /* LoginService.swift in Sources */,
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
 				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
+				03D4C56A1C978E4E00294A24 /* AppCookieService.swift in Sources */,
+				03CC9AE21C96F9E400817696 /* StatusMenu.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

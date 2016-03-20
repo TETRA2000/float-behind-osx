@@ -673,7 +673,7 @@
                 </menuItem>
             </items>
         </menu>
-        <menu id="AY6-By-Ky8">
+        <menu id="AY6-By-Ky8" customClass="StatusMenu" customModule="FloatBehind" customModuleProvider="target">
             <items>
                 <menuItem title="Login" id="bq8-VY-gg2">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -707,6 +707,9 @@
                     </connections>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="loginToggleItem" destination="bq8-VY-gg2" id="sQQ-yG-bgw"/>
+            </connections>
             <point key="canvasLocation" x="-67.5" y="301.5"/>
         </menu>
     </objects>
