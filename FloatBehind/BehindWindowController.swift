@@ -17,7 +17,7 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
     super.windowDidLoad()
     
     guard let window = self.window else {
-        return;
+      return;
     }
     
     window.delegate = self
@@ -63,17 +63,12 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
     // fill the window to screen size
     self.window?.setFrame(rect, display: true)
   }
-
-  // MARL: - NSWindowDelegate
+  
+  // MARK: - NSWindowDelegate
   func windowDidChangeScreen(notification: NSNotification) {
     if let window = self.window {
       fitWindowToScreen(window)
     }
-  }
-
-  // MARK: - LoginMediatorDelegate
-  func loginMediatorDidSuccessLogin() {
-    self.webView.reload(nil)
   }
 
   // MARK: - WebFrameLoadDelegate
