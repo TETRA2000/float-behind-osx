@@ -1,10 +1,16 @@
 PODS:
+  - JSONJoy-Swift (2.0.0)
   - Sparkle (1.13.1)
+  - SwiftHTTP (1.0.4)
 
 DEPENDENCIES:
+  - JSONJoy-Swift (~> 2.0.0)
   - Sparkle (~> 1.10)
+  - SwiftHTTP (~> 1.0.4)
 
 SPEC CHECKSUMS:
+  JSONJoy-Swift: 9dc31dfb9e551c3ae7781513a86e369598102653
   Sparkle: 2fbd47b869621d1e679c7554e3e19dda02104818
+  SwiftHTTP: 7e084af3bf628b17589c7b61a9df8750947a9813
 
 COCOAPODS: 0.39.0
