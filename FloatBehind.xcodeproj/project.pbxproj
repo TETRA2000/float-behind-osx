@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0329CDDD1C9EF01B004A12F8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0329CDDC1C9EF01B004A12F8 /* Account.swift */; };
 		0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335AFA11BF78DEC00F66F2B /* AppDelegate.swift */; };
 		0335AFA41BF78DEC00F66F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFA31BF78DEC00F66F2B /* Assets.xcassets */; };
 		0335AFA71BF78DEC00F66F2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335AFA51BF78DEC00F66F2B /* MainMenu.xib */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		030867E21BF831CA000AE366 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0329CDDC1C9EF01B004A12F8 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0335AF9E1BF78DEC00F66F2B /* FloatBehind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatBehind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0335AFA11BF78DEC00F66F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		0335AFA31BF78DEC00F66F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0329CDDB1C9EF005004A12F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0329CDDC1C9EF01B004A12F8 /* Account.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0335AF951BF78DEC00F66F2B = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		0335AFA01BF78DEC00F66F2B /* FloatBehind */ = {
 			isa = PBXGroup;
 			children = (
+				0329CDDB1C9EF005004A12F8 /* Model */,
 				03D4C5681C978E3900294A24 /* Service */,
 				03CC9AE01C96F9C400817696 /* Menu */,
 				A9D1E4821C622B7600DA000B /* WindowController */,
@@ -408,6 +419,7 @@
 				0335AFA21BF78DEC00F66F2B /* AppDelegate.swift in Sources */,
 				03ABBCA31C5DDD8E00219C6A /* LoginWindowController.swift in Sources */,
 				03D4C56A1C978E4E00294A24 /* AppCookieService.swift in Sources */,
+				0329CDDD1C9EF01B004A12F8 /* Account.swift in Sources */,
 				03CC9AE21C96F9E400817696 /* StatusMenu.swift in Sources */,
 				0335AFD21BF79E3E00F66F2B /* BehindWindowController.swift in Sources */,
 			);

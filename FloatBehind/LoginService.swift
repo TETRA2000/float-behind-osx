@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import SwiftHTTP
+import JSONJoy
 
 protocol LoginServiceDelegate: class {
   func loginService(loginService: LoginService, didChangeLoggedIn loggedIn: Bool)
@@ -47,7 +49,6 @@ class LoginServiceDelegateSet {
   }
 }
 
-
 class LoginService: NSObject, LoginWindowDelegate {
   static let sharedService = LoginService()
   
@@ -55,11 +56,16 @@ class LoginService: NSObject, LoginWindowDelegate {
   
   var loggedIn: Bool = false {
     didSet {
+      if !self.loggedIn {
+        self.account = nil
+      }
+      
       if oldValue != self.loggedIn {
         self.delegates.forEach { $0.loginService(self, didChangeLoggedIn: self.loggedIn) }
       }
     }
   }
+  var account: Account?
 
   var loginWindowController: NSWindowController {
     let loginWindowController = LoginWindowController(windowNibName: "LoginWindowController")
@@ -82,9 +88,26 @@ class LoginService: NSObject, LoginWindowDelegate {
     self.loggedIn = false
   }
   
+  func fetchAccount() {
+    let opt = try! HTTP.GET(URLConstants.me.absoluteString)
+    
+    opt.start { response in
+      dispatch_async(dispatch_get_main_queue(), {
+        if response.error != nil {
+          self.loggedIn = false
+          return
+        }
+
+        let sessionID = AppCookieService.sharedService.valueForName("sid")!
+        self.account = try! Account(sessionID: sessionID, decoder: JSONDecoder(response.data)["result"])
+        self.loggedIn = true
+      })
+    }
+  }
+  
   // MARK: - LoginWindowDelegate
   func loginWindowDidSuccessLogin(window: NSWindow) {
-    self.loggedIn = true
+    self.fetchAccount()
   }
   
   func loginWindowDidCancelLogin(window: NSWindow) {

@@ -11,6 +11,15 @@ import Cocoa
 class AppCookieSet: SequenceType {
   private let storage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
   
+  func cookieForName(name: String) -> NSHTTPCookie? {
+    for cookie in self {
+      if cookie.name == name {
+        return cookie
+      }
+    }
+    return nil
+  }
+  
   func removeCookieForName(name: String) {
     for cookie in self {
       if cookie.name == name {
@@ -41,6 +50,11 @@ class AppCookieService: NSObject {
   private let cookieSet = AppCookieSet()
   
   override private init() {}
+  
+  func valueForName(name: String) -> String? {
+    guard let cookie = self.cookieSet.cookieForName(name) else { return nil }
+    return cookie.value
+  }
   
   func removeCookieForName(name: String) {
     self.cookieSet.removeCookieForName(name)

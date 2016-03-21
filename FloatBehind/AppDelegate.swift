@@ -23,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.windowController.showWindow(nil)
 
     self.setupStatusItem()
+    
+    LoginService.sharedService.fetchAccount()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {

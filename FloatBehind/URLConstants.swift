@@ -17,4 +17,5 @@ import Cocoa
 struct URLConstants {
   static let app = NSURL(string: host)!
   static let slackLogin = NSURL(string: "/oauth/slack", relativeToURL: URLConstants.app)!.absoluteURL
+  static let me = NSURL(string: "/api/v1/users/me", relativeToURL: URLConstants.app)!.absoluteURL
 }
