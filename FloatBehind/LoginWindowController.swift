@@ -11,7 +11,7 @@ import WebKit
 
 protocol LoginWindowDelegate {
   func loginWindowDidSuccessLogin(window: NSWindow);
-  func loginWindowDidCancelLogin();
+  func loginWindowDidCancelLogin(window: NSWindow);
 }
 
 class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
@@ -36,7 +36,7 @@ class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
   
   func clickWindowCloseButton(sender: NSButton) {
     self.close()
-    self.delegate?.loginWindowDidCancelLogin()
+    self.delegate?.loginWindowDidCancelLogin(self.window!)
   }
 
   // MARK: - WebFrameLoadDelegate

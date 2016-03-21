@@ -87,7 +87,7 @@ class LoginService: NSObject, LoginWindowDelegate {
     self.loggedIn = true
   }
   
-  func loginWindowDidCancelLogin() {
+  func loginWindowDidCancelLogin(window: NSWindow) {
     self.loggedIn = false
   }
 }
