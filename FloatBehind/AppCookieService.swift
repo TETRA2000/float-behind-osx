@@ -17,14 +17,10 @@ class AppCookieService: NSObject {
   func removeCookieForName(name: String) {
     let cookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
     
-    // Delete cookie for given name
-    if let cookies: [NSHTTPCookie] = cookieStorage.cookiesForURL(URLConstants.app) {
-      for cookie in cookies {
-        if (cookie.name == name) {
-          cookieStorage.deleteCookie(cookie)
-          break
-        }
-      }
-    }
+    guard let cookies: [NSHTTPCookie] = cookieStorage.cookiesForURL(URLConstants.app) else { return }
+    
+    cookies
+      .filter { c in c.name == name }
+      .forEach { c in cookieStorage.deleteCookie(c) }
   }
 }
