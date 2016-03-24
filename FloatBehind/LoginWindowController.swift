@@ -31,7 +31,7 @@ class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
     
     self.windowCloseButton = self.window?.standardWindowButton(.CloseButton)
     self.windowCloseButton.target = self
-    self.windowCloseButton.action = "clickWindowCloseButton:"
+    self.windowCloseButton.action = #selector(LoginWindowController.clickWindowCloseButton(_:))
   }
   
   func clickWindowCloseButton(sender: NSButton) {

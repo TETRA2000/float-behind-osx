@@ -53,7 +53,7 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
 
   override class func isSelectorExcludedFromWebScript(aSelector: Selector) -> Bool {
     switch aSelector {
-    case Selector("requestPreviewCard:"):
+    case #selector(BehindWindowController.requestPreviewCard(_:)):
       return false
     default:
       return true
