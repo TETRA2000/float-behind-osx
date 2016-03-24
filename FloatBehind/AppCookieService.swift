@@ -12,16 +12,11 @@ class AppCookieSet: SequenceType {
   private let storage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
   
   func cookieForName(name: String) -> NSHTTPCookie? {
-    for cookie in self {
-      if cookie.name == name {
-        return cookie
-      }
-    }
-    return nil
+    return self.filter({ c in c.name == name }).first
   }
   
   func removeCookieForName(name: String) {
-    for cookie in self {
+    for cookie: NSHTTPCookie in self {
       if cookie.name == name {
         storage.deleteCookie(cookie)
       }
@@ -29,16 +24,17 @@ class AppCookieSet: SequenceType {
   }
   
   func generate() -> AnyGenerator<NSHTTPCookie> {
-    guard let cookies = self.storage.cookiesForURL(URLConstants.app) else { return AnyGenerator() }
+    let cookies: [NSHTTPCookie] = self.storage.cookiesForURL(URLConstants.app) ?? []
     
-    let count = cookies.count
     var index = 0
-    return anyGenerator {
-      if index < count {
-        return cookies[index++]
-      } else {
-        return nil
+    return AnyGenerator<NSHTTPCookie> {
+      if index < cookies.count {
+        let result = cookies[index]
+        index += 1
+        return result
       }
+      
+      return nil
     }
   }
 }
@@ -52,8 +48,7 @@ class AppCookieService: NSObject {
   override private init() {}
   
   func valueForName(name: String) -> String? {
-    guard let cookie = self.cookieSet.cookieForName(name) else { return nil }
-    return cookie.value
+    return self.cookieSet.cookieForName(name)?.value
   }
   
   func removeCookieForName(name: String) {
