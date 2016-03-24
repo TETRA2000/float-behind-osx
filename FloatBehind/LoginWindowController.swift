@@ -14,30 +14,36 @@ protocol LoginWindowDelegate {
   func loginWindowDidCancelLogin();
 }
 
-class LoginWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate {
+class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
 
   var delegate: LoginWindowDelegate?;
 
   @IBOutlet var webView: WebView!
+  var windowCloseButton: NSButton!
 
   override func windowDidLoad() {
     super.windowDidLoad()
 
-    self.window?.delegate = self
     self.webView.frameLoadDelegate = self;
 
     let request = NSURLRequest(URL: URLConstants.slackLogin)
     self.webView.mainFrame.loadRequest(request)
+    
+    self.windowCloseButton = self.window?.standardWindowButton(.CloseButton)
+    self.windowCloseButton.target = self
+    self.windowCloseButton.action = "clickWindowCloseButton:"
+  }
+  
+  func clickWindowCloseButton(sender: NSButton) {
+    self.close()
+    self.delegate?.loginWindowDidCancelLogin()
   }
 
   // MARK: - WebFrameLoadDelegate
   func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
     if frame.provisionalDataSource.request.URL == URLConstants.app {
+      frame.stopLoading()
       self.delegate?.loginWindowDidSuccessLogin(self.window!)
     }
-  }
-  // MARK: - NSWindowDelegate
-  func windowWillClose(notification: NSNotification) {
-    self.delegate?.loginWindowDidCancelLogin()
   }
 }

@@ -9,15 +9,19 @@
 import Cocoa
 import WebKit
 
-class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate, LoginMediatorDelegate {
+class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate, LoginServiceDelegate {
 
   @IBOutlet var webView: WebView!;
+  
+  deinit {
+    LoginService.sharedService.removeDelegate(self)
+  }
 
   override func windowDidLoad() {
     super.windowDidLoad()
     
     guard let window = self.window else {
-        return;
+      return;
     }
     
     window.delegate = self
@@ -36,8 +40,9 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
     self.webView.drawsBackground = false;
     let request = NSURLRequest(URL: URLConstants.app)
     self.webView.mainFrame.loadRequest(request)
-
-    LoginWindowControllerMediator.sharedInstance.addDelegate(self)
+    
+    // Observe login state
+    LoginService.sharedService.addDelegate(self)
   }
 
   func requestPreviewCard(urlString: String) {
@@ -63,17 +68,12 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
     // fill the window to screen size
     self.window?.setFrame(rect, display: true)
   }
-
-  // MARL: - NSWindowDelegate
+  
+  // MARK: - NSWindowDelegate
   func windowDidChangeScreen(notification: NSNotification) {
     if let window = self.window {
       fitWindowToScreen(window)
     }
-  }
-
-  // MARK: - LoginMediatorDelegate
-  func loginMediatorDidSuccessLogin() {
-    self.webView.reload(nil)
   }
 
   // MARK: - WebFrameLoadDelegate
@@ -88,5 +88,10 @@ class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoad
     if frame.provisionalDataSource.request.URL != URLConstants.app {
       frame.stopLoading()
     }
+  }
+  
+  // MARK: LoginServiceDelegate
+  func loginService(loginService: LoginService, didChangeLoggedIn loggedIn: Bool) {
+    self.webView.reload(nil)
   }
 }

@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-  @IBOutlet weak var statusMenu: NSMenu!
+  @IBOutlet weak var statusMenu: StatusMenu!
 
   var statusItem: NSStatusItem!
   var windowController: BehindWindowController = BehindWindowController(windowNibName: "BehindWindowController")
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   @IBAction func clickLoginItem(sender: NSMenuItem) {
-    LoginWindowControllerMediator.sharedInstance.login()
+    self.statusMenu.clickLoginItem(sender)
   }
 
   @IBAction func clickOverIcons(sender: NSMenuItem) {
