@@ -6,11 +6,11 @@
     <description>The most recent update information of the floatbehind app.</description>
     <language>en</language>
     <item>
-      <title>floatbehind 1.0.0</title>
+      <title>floatbehind 1.1.0</title>
       <description>
         <![CDATA[
           <ul>
-          <li>First release.</li>
+          <li>Add logout feature</li>
           </ul>
         ]]>
       </description>
