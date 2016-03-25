@@ -15,7 +15,7 @@
         ]]>
       </description>
       <pubDate></pubDate>
-      <enclosure url="https://github.com/ktsn/float-behind-osx/releases/download/v1.0.0/FloatBehind-1.0.0.dmg" sparkle:version="1.0.0" length="20160314" type="application/octet-stream" sparkle:dsaSignature="MCwCFCXs+6AeWV7ZkvkZwzcbbHPSwLEOAhQ7PjjgZRPJ0H4GMumBcgE+w1t2VA==" />
+      <enclosure url="https://github.com/ktsn/float-behind-osx/releases/download/v1.1.0/FloatBehind-1.1.0.dmg" sparkle:version="1.1.0" length="20160325" type="application/octet-stream" sparkle:dsaSignature="MCwCFGqLJDxyn3hnUX6x9KzEz+kCqbv2AhQWG3mzL8NCGUVu71lSPz4cmzk/LA==" />
     </item>
   </channel>
 </rss>
