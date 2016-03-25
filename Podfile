@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'FloatBehind' do
   pod 'Sparkle', '~> 1.10'
+  pod 'SwiftHTTP', '~> 1.0.4'
+  pod 'JSONJoy-Swift', '~> 2.0.0'
 end
 
 target 'FloatBehindTests' do
