@@ -7,15 +7,15 @@
 //
 
 #if LOCAL
-  let host = "http://localhost.floatbehind.ninja:3000/"
+    let host = "http://localhost.floatbehind.ninja:3000/"
 #else
-  let host = "https://app.floatbehind.ninja/"
+    let host = "https://app.floatbehind.ninja/"
 #endif
 
 import Cocoa
 
 struct URLConstants {
-  static let app = NSURL(string: host)!
-  static let slackLogin = NSURL(string: "/oauth/slack", relativeToURL: URLConstants.app)!.absoluteURL
-  static let me = NSURL(string: "/api/v1/users/me", relativeToURL: URLConstants.app)!.absoluteURL
+    static let app = NSURL(string: host)!
+    static let slackLogin = NSURL(string: "/oauth/slack", relativeToURL: URLConstants.app)!.absoluteURL
+    static let me = NSURL(string: "/api/v1/users/me", relativeToURL: URLConstants.app)!.absoluteURL
 }
