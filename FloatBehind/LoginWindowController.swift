@@ -10,40 +10,40 @@ import Cocoa
 import WebKit
 
 protocol LoginWindowDelegate {
-  func loginWindowDidSuccessLogin(window: NSWindow);
-  func loginWindowDidCancelLogin(window: NSWindow);
+    func loginWindowDidSuccessLogin(window: NSWindow);
+    func loginWindowDidCancelLogin(window: NSWindow);
 }
 
 class LoginWindowController: NSWindowController, WebFrameLoadDelegate {
-
-  var delegate: LoginWindowDelegate?;
-
-  @IBOutlet var webView: WebView!
-  var windowCloseButton: NSButton!
-
-  override func windowDidLoad() {
-    super.windowDidLoad()
-
-    self.webView.frameLoadDelegate = self;
-
-    let request = NSURLRequest(URL: URLConstants.slackLogin)
-    self.webView.mainFrame.loadRequest(request)
     
-    self.windowCloseButton = self.window?.standardWindowButton(.CloseButton)
-    self.windowCloseButton.target = self
-    self.windowCloseButton.action = #selector(LoginWindowController.clickWindowCloseButton(_:))
-  }
-  
-  func clickWindowCloseButton(sender: NSButton) {
-    self.close()
-    self.delegate?.loginWindowDidCancelLogin(self.window!)
-  }
-
-  // MARK: - WebFrameLoadDelegate
-  func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
-    if frame.provisionalDataSource.request.URL == URLConstants.app {
-      frame.stopLoading()
-      self.delegate?.loginWindowDidSuccessLogin(self.window!)
+    var delegate: LoginWindowDelegate?;
+    
+    @IBOutlet var webView: WebView!
+    var windowCloseButton: NSButton!
+    
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        
+        self.webView.frameLoadDelegate = self;
+        
+        let request = NSURLRequest(URL: URLConstants.slackLogin)
+        self.webView.mainFrame.loadRequest(request)
+        
+        self.windowCloseButton = self.window?.standardWindowButton(.CloseButton)
+        self.windowCloseButton.target = self
+        self.windowCloseButton.action = #selector(LoginWindowController.clickWindowCloseButton(_:))
     }
-  }
+    
+    func clickWindowCloseButton(sender: NSButton) {
+        self.close()
+        self.delegate?.loginWindowDidCancelLogin(self.window!)
+    }
+    
+    // MARK: - WebFrameLoadDelegate
+    func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
+        if frame.provisionalDataSource.request.URL == URLConstants.app {
+            frame.stopLoading()
+            self.delegate?.loginWindowDidSuccessLogin(self.window!)
+        }
+    }
 }

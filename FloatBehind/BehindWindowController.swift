@@ -10,88 +10,88 @@ import Cocoa
 import WebKit
 
 class BehindWindowController: NSWindowController, NSWindowDelegate, WebFrameLoadDelegate, LoginServiceDelegate {
-
-  @IBOutlet var webView: WebView!;
-  
-  deinit {
-    LoginService.sharedService.removeDelegate(self)
-  }
-
-  override func windowDidLoad() {
-    super.windowDidLoad()
     
-    guard let window = self.window else {
-      return;
+    @IBOutlet var webView: WebView!;
+    
+    deinit {
+        LoginService.sharedService.removeDelegate(self)
     }
     
-    window.delegate = self
-
-    fitWindowToScreen(window)
-
-    // set the window behind all other windows
-    window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DesktopIconWindowLevelKey)) + 1
-
-    // should be transparent
-    window.backgroundColor = NSColor.clearColor()
-    window.opaque = false
-
-    // WebView settings
-    self.webView.frameLoadDelegate = self;
-    self.webView.drawsBackground = false;
-    let request = NSURLRequest(URL: URLConstants.app)
-    self.webView.mainFrame.loadRequest(request)
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        
+        guard let window = self.window else {
+            return;
+        }
+        
+        window.delegate = self
+        
+        fitWindowToScreen(window)
+        
+        // set the window behind all other windows
+        window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.DesktopIconWindowLevelKey)) + 1
+        
+        // should be transparent
+        window.backgroundColor = NSColor.clearColor()
+        window.opaque = false
+        
+        // WebView settings
+        self.webView.frameLoadDelegate = self;
+        self.webView.drawsBackground = false;
+        let request = NSURLRequest(URL: URLConstants.app)
+        self.webView.mainFrame.loadRequest(request)
+        
+        // Observe login state
+        LoginService.sharedService.addDelegate(self)
+    }
     
-    // Observe login state
-    LoginService.sharedService.addDelegate(self)
-  }
-
-  func requestPreviewCard(urlString: String) {
-    if let url = NSURL(string: urlString) {
-      NSWorkspace.sharedWorkspace().openURL(url)
+    func requestPreviewCard(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            NSWorkspace.sharedWorkspace().openURL(url)
+        }
     }
-  }
-
-  override class func isSelectorExcludedFromWebScript(aSelector: Selector) -> Bool {
-    switch aSelector {
-    case #selector(BehindWindowController.requestPreviewCard(_:)):
-      return false
-    default:
-      return true
+    
+    override class func isSelectorExcludedFromWebScript(aSelector: Selector) -> Bool {
+        switch aSelector {
+        case #selector(BehindWindowController.requestPreviewCard(_:)):
+            return false
+        default:
+            return true
+        }
     }
-  }
-
-  private func fitWindowToScreen(window: NSWindow) {
-    guard let rect = NSScreen.mainScreen()?.visibleFrame else {
-        return;
+    
+    private func fitWindowToScreen(window: NSWindow) {
+        guard let rect = NSScreen.mainScreen()?.visibleFrame else {
+            return;
+        }
+        
+        // fill the window to screen size
+        self.window?.setFrame(rect, display: true)
     }
-
-    // fill the window to screen size
-    self.window?.setFrame(rect, display: true)
-  }
-  
-  // MARK: - NSWindowDelegate
-  func windowDidChangeScreen(notification: NSNotification) {
-    if let window = self.window {
-      fitWindowToScreen(window)
+    
+    // MARK: - NSWindowDelegate
+    func windowDidChangeScreen(notification: NSNotification) {
+        if let window = self.window {
+            fitWindowToScreen(window)
+        }
     }
-  }
-
-  // MARK: - WebFrameLoadDelegate
-  func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
-    if let _ = frame.findFrameNamed("_top") {
-      sender.windowScriptObject.setValue(self, forKey: "Native")
+    
+    // MARK: - WebFrameLoadDelegate
+    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
+        if let _ = frame.findFrameNamed("_top") {
+            sender.windowScriptObject.setValue(self, forKey: "Native")
+        }
     }
-  }
-
-  func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
-    // prevent the main webview to load unexpected pages
-    if frame.provisionalDataSource.request.URL != URLConstants.app {
-      frame.stopLoading()
+    
+    func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
+        // prevent the main webview to load unexpected pages
+        if frame.provisionalDataSource.request.URL != URLConstants.app {
+            frame.stopLoading()
+        }
     }
-  }
-  
-  // MARK: LoginServiceDelegate
-  func loginService(loginService: LoginService, didChangeLoggedIn loggedIn: Bool) {
-    self.webView.reload(nil)
-  }
+    
+    // MARK: LoginServiceDelegate
+    func loginService(loginService: LoginService, didChangeLoggedIn loggedIn: Bool) {
+        self.webView.reload(nil)
+    }
 }
