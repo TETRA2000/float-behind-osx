@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode7.3
+before_install:
+  - gem install bundler
+  - bundle install
+  - bundle exec pod install
+script:
+  - xcodebuild test -workspace FloatBehind.xcworkspace -scheme FloatBehindLocal
