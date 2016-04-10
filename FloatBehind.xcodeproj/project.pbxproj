@@ -287,7 +287,6 @@
 				TargetAttributes = {
 					0335AF9D1BF78DEC00F66F2B = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = Y55F6P6D52;
 					};
 					0335AFAC1BF78DED00F66F2B = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -554,7 +553,6 @@
 			baseConfigurationReference = 05D47997530093A27905B3CF /* Pods-FloatBehind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FloatBehind/Info.plist;
@@ -571,7 +569,6 @@
 			baseConfigurationReference = 2BD8987B87DFE5884132ED1D /* Pods-FloatBehind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FloatBehind/Info.plist;
@@ -686,7 +683,6 @@
 			baseConfigurationReference = B13F278F9E5D8DE02F2B9516 /* Pods-FloatBehind.debug local.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FloatBehind/Info.plist;
@@ -767,7 +763,6 @@
 			baseConfigurationReference = 70A954B947452BF72030EF7B /* Pods-FloatBehind.release local.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FloatBehind/Info.plist;
